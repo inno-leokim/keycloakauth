@@ -1,0 +1,22 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://10.200.82.102:8080/realms/sso-test
+      client:
+        registration:
+          keycloak:
+            client-id: testapp01
+            authorization-grant-type: authorization_code
+            scope: openid
+            client-secret: xHHa3JXkqRkHSYk5omqC6tVKAFv9psZm 
+            # redirect-uri: http://localhost:8080/customers
+        provider:
+          keycloak:
+            issuer-uri: http://10.200.82.102:8080/realms/sso-test
+            user-name-attribute: preferred_username
+  output:
+    ansi:
+      enabled: ALWAYS
+
